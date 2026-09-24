@@ -15,7 +15,8 @@ models:
       - name: tier
         tests:
           - accepted_values:
-              values: ['T1', 'T2', 'T3']
+              arguments:
+                values: ['T1', 'T2', 'T3']
 
   - name: mdm_merchant_match_score
     description: Audit evidence - one row per scored pair, every component retained.

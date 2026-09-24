@@ -1,8 +1,8 @@
 -- Simulates reading slv_merchant_addresses. This is also where the real
 -- zip-as-NUMBER defect (documented in the FND walkthrough) gets fixed: zip
 -- is stored numeric, so 07307 becomes 7307. LPAD restores the leading zero.
--- Swap ref() for {{ source('silver','slv_merchant_addresses') }} once real
--- Silver access exists.
+-- NOTE: once real Silver access exists, swap the ref() below for a proper
+-- source() call pointing at the real Silver database/schema.
 
 select
     source_system,

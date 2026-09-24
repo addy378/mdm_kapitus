@@ -1,7 +1,7 @@
--- Simulates reading slv_merchants. In the real project, swap the ref() below
--- for {{ source('silver', 'slv_merchants') }} once Silver access exists, and
--- confirm these column names against the real DDL (see README §"Swapping in
--- real Silver data").
+-- Simulates reading slv_merchants. NOTE: once real Silver access exists,
+-- swap the ref() below for a proper source() call pointing at the real
+-- Silver database/schema, and confirm these column names against the
+-- real DDL.
 
 select
     source_system,
