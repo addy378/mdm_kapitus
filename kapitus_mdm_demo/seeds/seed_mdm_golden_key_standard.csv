@@ -1,0 +1,2 @@
+version,entity_class,prefix,sequence_name,collision_policy,note
+v1,MERCHANT,ENT,mdm_merchant_golden_key_seq,FAIL_RUN,"Real system (PHDAT-366) mints from a dedicated Snowflake sequence. This demo does NOT use a real sequence - see mdm_merchant_golden.sql comments."

@@ -1,0 +1,5 @@
+version,field,comparator,weight,owner
+v1,name_norm,JAROWINKLER,0.45,DE
+v1,street_norm,JAROWINKLER,0.30,DE
+v1,zip5,EXACT,0.15,DE
+v1,city_norm,EXACT,0.10,DE

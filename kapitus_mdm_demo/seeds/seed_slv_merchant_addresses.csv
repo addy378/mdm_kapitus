@@ -1,0 +1,15 @@
+source_system,source_key,address_1,city,state_code,zip
+SFSDB,215102,12 Main Street,Columbus,OH,43215
+KEF_ORION,88413,14 Main Street,Columbus,OH,43215
+SFSDB,777001,58 High Street,Columbus,OH,43215
+SFSDB,493202,200 Commerce Blvd,Dayton,OH,45402
+SFSDB,512880,200 Commerce Blvd,Dayton,OH,45402
+SFSDB,4016251,10 Orchard Lane,Springfield,OH,45501
+SFSDB,4027371,10 Orchard Lane,Springfield,OH,45501
+SFSDB,3537561,5 Harborview Dr,Jersey City,NJ,7307
+SFSDB,2818591,88 Dock Road,Newark,NJ,7105
+SFSDB,3110921,88 Dock Road,Newark,NJ,7105
+SFSDB,4410077,12 Port Street,Newark,NJ,7105
+SFSDB,834172,5 Elm Street,Houston,TX,77002
+SFSDB,2205511,5 Elm Street,Houston,TX,77002
+SFSDB,990412,900 Industrial Pkwy,Columbus,OH,43215

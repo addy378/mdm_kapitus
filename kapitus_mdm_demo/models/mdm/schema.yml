@@ -1,0 +1,65 @@
+version: 2
+
+models:
+  - name: mdm_merchant_normalized
+    description: One row per source record, comparable/normalized form.
+    columns:
+      - name: record_id
+        tests:
+          - unique
+          - not_null
+
+  - name: mdm_merchant_candidate_pair
+    description: All candidate pairs from Tier 1 (exact) and Tier 2 (fuzzy, blocked).
+    columns:
+      - name: tier
+        tests:
+          - accepted_values:
+              values: ['T1', 'T2', 'T3']
+
+  - name: mdm_merchant_match_score
+    description: Audit evidence - one row per scored pair, every component retained.
+    columns:
+      - name: band
+        tests:
+          - accepted_values:
+              values: ['AUTO_MATCH', 'STEWARD_REVIEW', 'NO_MATCH']
+      - name: ein_status
+        tests:
+          - accepted_values:
+              values: ['AGREE', 'CONFLICT', 'ABSTAIN']
+
+  - name: mdm_steward_case
+    description: Cases needing human review - auto-created from STEWARD_REVIEW band pairs.
+    columns:
+      - name: case_id
+        tests:
+          - unique
+          - not_null
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['OPEN', 'DECIDED']
+
+  - name: mdm_steward_decision_ledger
+    description: Human decisions on ambiguous pairs. Read before clustering.
+    columns:
+      - name: decision
+        tests:
+          - accepted_values:
+              values: ['MERGE', 'KEEP_SEPARATE', 'SPLIT']
+
+  - name: mdm_merchant_golden
+    description: One golden record per cluster, survived per-field.
+    columns:
+      - name: golden_key
+        tests:
+          - unique
+          - not_null
+
+  - name: mdm_merchant_xref
+    description: The crosswalk - the only MDM table Gold Core needs to consume.
+    columns:
+      - name: golden_key
+        tests:
+          - not_null

@@ -1,0 +1,5 @@
+version,field,source_system,priority,policy
+v1,legal_name,SFSDB,1,PRIORITY
+v1,legal_name,SALESFORCE,2,PRIORITY
+v1,legal_name,KEF_ORION,3,PRIORITY
+v1,address,ANY,,RECENCY

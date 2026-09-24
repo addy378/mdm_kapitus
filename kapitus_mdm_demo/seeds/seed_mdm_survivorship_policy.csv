@@ -1,0 +1,4 @@
+version,field,policy,null_handling
+v1,legal_name,PRIORITY,SKIP_NULLS
+v1,address,RECENCY,SKIP_NULLS
+v1,ein_hash,VALID_FIRST,SKIP_NULLS

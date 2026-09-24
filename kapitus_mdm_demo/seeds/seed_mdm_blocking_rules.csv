@@ -1,0 +1,3 @@
+version,rule_name,key_expression,notes
+v1,hashed_ein,ein_hash,Tier 1 exact rule - not a block, a direct equality check
+v1,zip_first_token,zip5 + first_token(name_norm),Tier 2 block key - misses records whose first name token differs (e.g. "1 Way" vs "One Way")

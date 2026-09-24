@@ -1,0 +1,4 @@
+version,band,min_score
+v1,AUTO_MATCH,0.90
+v1,STEWARD_REVIEW,0.70
+v1,NO_MATCH,0.00
