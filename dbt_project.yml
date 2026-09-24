@@ -1,0 +1,41 @@
+name: 'kapitus_mdm_demo'
+version: '1.0.0'
+config-version: 2
+
+# NOTE: this is a sandbox/demo project for testing MDM matching strategies
+# before real Silver/Snowflake access is available. See README.md for what
+# is demo-grade vs what MUST change before this touches real data.
+
+profile: 'kapitus_mdm_demo'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  kapitus_mdm_demo:
+    staging:
+      +materialized: view
+      +schema: staging_demo
+    mdm:
+      +materialized: table
+      +schema: mdm_demo
+    gold_core_demo:
+      +materialized: table
+      +schema: gold_core_demo
+
+seeds:
+  kapitus_mdm_demo:
+    +schema: mdm_config_demo
+    # Simulates the real defect documented in the FND walkthrough: zip is
+    # stored as a NUMBER in Silver, so leading zeros are lost (07307 -> 7307).
+    # We deliberately load it the same broken way here so the normalize
+    # model has to fix it with LPAD, same as production will.
+    seed_slv_merchant_addresses:
+      +column_types:
+        zip: number
